@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left:0;
-  width: 100%
+  width: 100%;
   background-color: black;
   color: green;
   font-family: "REM";
@@ -20,6 +20,9 @@
 
 .nav-bar.hidden{
   top: -100px;
+}
+section{
+  margin-top: 100px;
 }
 
 .nav-bar .nav-name{
@@ -43,5 +46,5 @@
 
 .nav-bar .nav-links a:hover{
   color: blue;
-  scale: 50;
+  scale: 1;
 }
