@@ -10,6 +10,6 @@ function addToCart(item){
 }
 
 
-
+console.log(cart)
 
 
