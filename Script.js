@@ -1,13 +1,20 @@
-localStorage.setItem("cart", JSON.stringify([]))
+// Initialize an empty cart in localStorage
+localStorage.setItem("cart", JSON.stringify([]));
 
-let cart = JSON.parse(localStorage.getItem("cart"))
-function addToCart(item){
+function addToCart(item) {
+  // Retrieve existing cart array or initialize an empty array
+  let storedItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // Ensure item is an array; if not, convert it into one
 
 
-  cart.push(item)
+  // Add new items to the array
+  storedItems.push(...item);
 
-  localStorage.setItem("cart", JSON.stringify(cart))
+  // Save updated array back to localStorage
+  localStorage.setItem("cart", JSON.stringify(storedItems));
 }
+
 
 
 
