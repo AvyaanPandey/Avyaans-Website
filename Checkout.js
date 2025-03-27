@@ -1,21 +1,28 @@
 
 let cart = JSON.parse(localStorage.getItem("cart"))
 
-let payment_body = document.getElementById("payment_body")
+let cart_body = document.getElementById("cart_items")
 console.log(cart)
 function removeItem(index) {
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
-    document.getElementById("payment_body").innerHTML = ""; // Clear UI
+    document.getElementById("cart_items").innerHTML = ""; // Clear UI
     renderCart(); // Re-render updated cart
 }
-
 function renderCart(){
+   for(let itemname in cart)
+   {
+      let elem = document.createElement("p")
+      elem.textContent = itemname + cart[itemname]["img"] 
+      cart_body.appendChild(elem)
+   }
+}
+function renderCartOld(){
    for (let i = 0; i < cart.length; i++) {
       let item = document.createElement("div")
       item.setAttribute("id", "item_container")
       let productImg = document.createElement("img")
-
+      console.log(cart[i])
       productImg.src = cart[i][1]
 
       item.appendChild(productImg)
